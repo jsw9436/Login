@@ -39,11 +39,11 @@
         android:text="Login"
         android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/textViewRegister"
+    <Button
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account? Register"
+        android:text="회원가입"
         android:textColor="@android:color/holo_blue_light"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"/>
