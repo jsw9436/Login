@@ -1,10 +1,12 @@
 package com.example.loginjae
 
+import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Email
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -30,6 +32,22 @@ class MainActivity : AppCompatActivity() {
         buttonLogin.setOnClickListener{
             val user =editTextEmail.text.toString()
             val pass=editTextPassword.text.toString()
+            if (user == "" || pass == "") {
+                Toast.makeText(this@MainActivity, "아이디 비밀번호 입력하세요",Toast.LENGTH_SHORT).show() }
+
+            else{
+                val checkUserpass = DB!!.checkUserpass(user, pass)
+                if (checkUserpass == true){
+
+                    Toast.makeText(this@MainActivity,"로그인", Toast.LENGTH_SHORT).show()
+                    val intent= Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+
+                }
+
+
+            }
+
 
 
         }
