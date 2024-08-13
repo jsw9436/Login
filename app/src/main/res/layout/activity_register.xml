@@ -1,60 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:background="#0E5BDF"
+    tools:context=".RegisterActivity">
 
     <TextView
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:textSize="24sp"
+        android:text="회원가입"
+        android:textColor="#FFFFFF"
+        android:textSize="48dp"
         android:textStyle="bold"
-        android:layout_gravity="center_horizontal"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"/>
 
     <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
+        android:id="@+id/editTextId_Reg"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter Full Name"
+        android:hint="아이디"
         android:textSize="48dp"
-        android:inputType="textPersonName"
-        android:layout_marginTop="16dp"/>
+        android:inputType="text"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8DFFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
+        android:id="@+id/editTextPass_Reg"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter Email"
-
+        android:hint="비밀번호"
         android:textSize="48dp"
-        android:inputType="textEmailAddress"
-        android:layout_marginTop="8dp"/>
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Password"
         android:inputType="textPassword"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8DFFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/editTextId_Reg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/editTextRePass_Reg"
+        android:layout_width="0dp"
         android:textSize="48dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_height="wrap_content"
+        android:hint="비밀번호 확인"
+        android:inputType="textPassword"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8DFFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/editTextPass_Reg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/editTextNick_Reg"
+        android:layout_width="0dp"
+        android:textSize="48dp"
+        android:layout_height="wrap_content"
+        android:hint="닉네임"
+        android:inputType="text"
+        android:maxLength="20"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8DFFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/editTextRePass_Reg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/editTextPhone_Reg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="48dp"
+        android:hint="휴대폰 번호"
+        android:inputType="phone"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8DFFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/editTextNick_Reg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"/>
 
     <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/textViewLogin"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Already have an account? Login"
-        android:textColor="@android:color/holo_blue_light"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"/>
-</LinearLayout>
+        android:text="회원가입"
+        android:backgroundTint="#FFFFFF"
+        android:textSize="48dp"
+        android:textColor="#0E5BDF"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/editTextPhone_Reg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
