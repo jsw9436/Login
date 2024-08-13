@@ -17,7 +17,7 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var editTextRePass_Reg: EditText
     lateinit var editTextNick_Reg: EditText
     lateinit var editTextPhone: EditText
-    lateinit var btnRegister: ImageButton
+    lateinit var btnRegister: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +29,7 @@ class RegisterActivity : AppCompatActivity() {
         editTextRePass_Reg = findViewById(R.id.editTextRePass_Reg)
         editTextPhone = findViewById(R.id.editTextPhone_Reg)
         editTextNick_Reg = findViewById(R.id.editTextNick_Reg)
+        btnRegister=findViewById<Button>(R.id.btnRegister)
 
         btnRegister.setOnClickListener {
             val user = editTextId_Reg.text.toString()
@@ -38,7 +39,7 @@ class RegisterActivity : AppCompatActivity() {
             val phone = editTextPhone.text.toString()
             val pwPattern = "^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z[0-9]]{8,15}$"
             val idPattern = "^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z[0-9]]{6,15}$"
-            val nickPattern = "^[ㄱ-ㅣ가-힣]*$"
+            val nickPattern = "^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z[0-9]]{8,15}$"
             val phonePattern = "^(\\+[0-9]+)?[0-9]{10,15}$"
             // 사용자 입력이 비었을 때
             if (user == "" || pass == "" || repass == "" || nick == "" || phone == "") Toast.makeText(
