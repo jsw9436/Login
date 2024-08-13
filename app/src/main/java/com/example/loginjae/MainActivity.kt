@@ -11,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
     lateinit var buttonLogin: ImageButton
@@ -26,8 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         editTextEmail=findViewById(R.id.editTextEmail)
         editTextPassword=findViewById(R.id.editTextPassword)
-        buttonLogin=findViewById(R.id.buttonLogin)
-        btnRegister=findViewById(R.id.btnRegister)
+        buttonLogin=findViewById<ImageButton>(R.id.buttonLogin)
+        btnRegister=findViewById<Button>(R.id.btnRegister)
 
         buttonLogin.setOnClickListener{
             val user =editTextEmail.text.toString()
@@ -42,19 +43,12 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity,"로그인", Toast.LENGTH_SHORT).show()
                     val intent= Intent(this, HomeActivity::class.java)
                     startActivity(intent)
-
                 }
-
-
             }
-
-
-
+            btnRegister.setOnClickListener{
+                val loginIntent = Intent(this@MainActivity, RegisterActivity::class.java)
+                startActivity(loginIntent)
+            }
         }
-
-
-
     }
-
-
 }
