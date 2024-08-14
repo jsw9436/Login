@@ -36,15 +36,23 @@ class MainActivity : AppCompatActivity() {
             if (user == "" || pass == "") {
                 Toast.makeText(this@MainActivity, "아이디 비밀번호 입력하세요",Toast.LENGTH_SHORT).show() }
 
-            else{
-                val checkUserpass = DB!!.checkUserpass(user, pass)
-                if (checkUserpass == true){
 
-                    Toast.makeText(this@MainActivity,"로그인", Toast.LENGTH_SHORT).show()
-                    val intent= Intent(this, HomeActivity::class.java)
+            else  {
+                val checkUserpass = DB!!.checkUserpass(user, pass)
+                if (checkUserpass == true) {
+
+                    Toast.makeText(this@MainActivity, "로그인", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 }
+                else{
+                    if(checkUserpass == false){
+                        Toast.makeText(this@MainActivity, "비밀번호 와 아이디가 맞지않습니다.",Toast.LENGTH_SHORT).show()
+
+                    }
+                }
             }
+
             btnRegister.setOnClickListener{
                 val loginIntent = Intent(this@MainActivity, RegisterActivity::class.java)
                 startActivity(loginIntent)
