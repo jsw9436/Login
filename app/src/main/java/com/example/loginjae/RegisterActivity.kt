@@ -24,6 +24,12 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         back_button = findViewById<Button>(R.id.back_button)
+        editTextId_Reg = findViewById(R.id.editTextId_Reg)
+        editTextPass_Reg = findViewById(R.id.editTextPass_Reg)
+        editTextRePass_Reg = findViewById(R.id.editTextRePass_Reg)
+        editTextPhone = findViewById(R.id.editTextPhone_Reg)
+        editTextNick_Reg = findViewById(R.id.editTextNick_Reg)
+        btnRegister=findViewById<Button>(R.id.btnRegister)
         back_button.setOnClickListener{
 
             val back_buttonIntent =  Intent(this@RegisterActivity, MainActivity::class.java)
@@ -32,12 +38,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
         DB = DBHelper(this)
-        editTextId_Reg = findViewById(R.id.editTextId_Reg)
-        editTextPass_Reg = findViewById(R.id.editTextPass_Reg)
-        editTextRePass_Reg = findViewById(R.id.editTextRePass_Reg)
-        editTextPhone = findViewById(R.id.editTextPhone_Reg)
-        editTextNick_Reg = findViewById(R.id.editTextNick_Reg)
-        btnRegister=findViewById<Button>(R.id.btnRegister)
+
 
 
         btnRegister.setOnClickListener {

@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                 val checkUserpass = DB!!.checkUserpass(user, pass)
                 if (checkUserpass == true) {
 
-                    Toast.makeText(this@MainActivity, "로그인", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 }
