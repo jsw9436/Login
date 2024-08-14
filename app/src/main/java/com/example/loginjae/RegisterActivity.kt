@@ -18,10 +18,18 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var editTextNick_Reg: EditText
     lateinit var editTextPhone: EditText
     lateinit var btnRegister: Button
+    lateinit var back_button:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        back_button = findViewById<Button>(R.id.back_button)
+        back_button.setOnClickListener{
+
+            val back_buttonIntent =  Intent(this@RegisterActivity, MainActivity::class.java)
+            startActivity(back_buttonIntent)
+        }
+
 
         DB = DBHelper(this)
         editTextId_Reg = findViewById(R.id.editTextId_Reg)
@@ -30,6 +38,7 @@ class RegisterActivity : AppCompatActivity() {
         editTextPhone = findViewById(R.id.editTextPhone_Reg)
         editTextNick_Reg = findViewById(R.id.editTextNick_Reg)
         btnRegister=findViewById<Button>(R.id.btnRegister)
+
 
         btnRegister.setOnClickListener {
             val user = editTextId_Reg.text.toString()
