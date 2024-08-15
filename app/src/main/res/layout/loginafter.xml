@@ -14,9 +14,9 @@
         android:layout_marginBottom="16dp"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click Me"/>
+        android:text="뒤로가기"/>
 
 </LinearLayout>
