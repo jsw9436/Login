@@ -1,5 +1,6 @@
 package com.example.loginjae
 
+import DBHelper2
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -17,6 +18,8 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.loginafter)
+
+        val DB: DBHelper2 ?= null
 
         button_back=findViewById(R.id.Button_back)
 
