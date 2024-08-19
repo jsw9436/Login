@@ -57,36 +57,6 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "Login.db", null, 1
         MyDB.close()
         return res
     }
-    fun insertPost(title: String, content: String, authorId: String): Boolean {
-        val MyDB = this.writableDatabase
-        val contentValues = ContentValues().apply {
-            put("title", title)
-            put("content", content)
-            put("authorId", authorId)
-        }
-        val result = MyDB.insert("posts", null, contentValues)
-        MyDB.close()
-        return result != -1L
-    }
-    fun getAllPosts(): List<Map<String, String>> {
-        val MyDB = this.readableDatabase
-        val cursor = MyDB.rawQuery("SELECT * FROM posts", null)
-        val posts = mutableListOf<Map<String, String>>()
-
-        while (cursor.moveToNext()) {
-            val post = mapOf(
-                "id" to cursor.getString(cursor.getColumnIndexOrThrow("id")),
-                "title" to cursor.getString(cursor.getColumnIndexOrThrow("title")),
-                "content" to cursor.getString(cursor.getColumnIndexOrThrow("content")),
-                "authorId" to cursor.getString(cursor.getColumnIndexOrThrow("authorId"))
-            )
-            posts.add(post)
-        }
-
-        cursor.close()
-        MyDB.close()
-        return posts
-    }
 
 
     companion object {
